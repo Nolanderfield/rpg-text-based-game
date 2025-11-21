@@ -2,15 +2,26 @@
 
 # Function to display key statistics
 display_stats() {
-    echo "	Stat				Description"
-    echo "HP (Hit Points)		Represents a character's health and vitality."
-    echo "MP (Magic Points)		Capacity to cast spells or use magical abilities."
-    echo "STR (Strength)		Determines a character's physical power and melee combat effectiveness."
-    echo "DEX (Dexterity)		Character's agility, reflexes, and balance."
-    echo "CON (Constitution)	Determines character's health, stamina, and resistance to disease."
-    echo "INT (Intelligence)	Represents a character's reasoning, memory, and analytical skills."
-    echo "WIS (Wisdom)		Determines a character's intuition, perception, and willpower."
-    echo "CHA (Charisma)		A character's force of personality, confidence, and leadership."
+    echo "Stat Description"
+    echo "HP (Hit Points) Represents a character's"
+    echo "health and vitality."
+    echo "MP (Magic Points) Capacity to cast"
+    echo "spells or use magical abilities."
+    echo "STR (Strength) Determines a character's"
+    echo "physical power and melee combat"
+    echo "effectiveness."
+    echo "DEX (Dexterity) Character's agility,"
+    echo "reflexes, and balance."
+    echo "CON (Constitution) Determines"
+    echo "character's health, stamina, and"
+    echo "resistance to disease."
+    echo "INT (Intelligence) Represents a"
+    echo "character's reasoning, memory, and"
+    echo "analytical skills."
+    echo "WIS (Wisdom) Determines a character's"
+    echo "intuition, perception, and willpower."
+    echo "CHA (Charisma) A character's force of"
+    echo "personality, confidence, and leadership."
 }
 
 # Function to set player stats based on class
