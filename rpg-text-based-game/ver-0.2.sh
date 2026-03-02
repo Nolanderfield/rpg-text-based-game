@@ -178,7 +178,8 @@ fight() {
         echo "Your HP: $PLAYER_HP"
 
         if [ $PLAYER_HP -le 0 ]; then
-            echo "You have been defeated by the $ENEMY_TYPE."
+            echo "You have been defeated by the"
+	    echo "$ENEMY_TYPE."
             break
         fi
 
@@ -187,7 +188,7 @@ fight() {
             echo "Critical hit! You deal double damage!"
             DAMAGE=$(( 2 * (RANDOM % PLAYER_STR + 1) ))
             ENEMY_HP=$(( ENEMY_HP - DAMAGE ))
-            echo "You deal $DAMAGE damage to the $ENEMY_TYPE."
+            echo "$DAMAGE damage dealt to $ENEMY_TYPE."
             echo "$ENEMY_TYPE HP: $ENEMY_HP"
         fi
 
@@ -208,8 +209,11 @@ while true; do
 
     # Class stats description section
     echo "Key Statistics:"
-    echo "If you want to look at the eight key stats used for the outcome of character actions,"
-    echo "please press the number zero ( 0 )"
+    echo "If you want to look at the eight key"
+    echo "stats used for the outcome of character"
+    echo "actions, please press the number"
+    echo "zero ( 0"
+)
 
     read STATS
 
@@ -241,4 +245,3 @@ while true; do
         break
     fi
 done
-

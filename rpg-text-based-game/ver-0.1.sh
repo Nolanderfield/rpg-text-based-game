@@ -1,10 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# This game is totally made up by Blippy Baggins with the
-# help of Mistral AI.
+# This game was made by Blippy.
 
 while true; do
-    echo "Welcome to Blippy Baggins' bash script game."
+    echo "Welcome to Blippy's bash script game."
 
     # Class stats description section
     sleep 2
@@ -14,7 +13,6 @@ while true; do
     # Display stats descriptions
     echo "Hit Points (HP): Represents a character's"
     echo "health and vitality."
-    echo ""
 
     echo "Magic Points (MP): Represents a character's"
     echo "ability to cast spells or use magical"
@@ -36,7 +34,7 @@ while true; do
     echo "intuition, perception, and willpower."
 
     echo "Charisma (CHA): Represents a character's"
-    echo "force of personality, confidence, and leadership."
+    echo "force of personality, confidence, & leadership."
 
     # Choosing a class section
     echo "Please choose a class."
@@ -100,7 +98,8 @@ while true; do
             lck=10
             ;;
         *)
-            echo "Invalid choice. Please choose a valid class."
+            echo "Invalid choice."
+	    echo "Please choose a valid class."
             continue
             ;;
     esac
