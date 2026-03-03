@@ -38,19 +38,24 @@ while true; do
 
     # Choosing a class section
     echo "Please choose a class."
-    echo "For a class description, please"
-    echo "enter the class name"
-    echo "Press 1 for Noble"
 
-    echo "Press 2 for Peasant"
+    echo "For a class description, please enter"
+    echo "the class name"
+
+    echo "Press 1 to choose the Noble class"
+
+    echo "Press 2 for the challenging Peasant class"
     echo "Poor, uneducated, and typically a farmer."
 
-    echo "Press 3 for Monk"
+    echo "Press 3 showing discipline as the Monk class"
 
-    echo "Press 4 for Mercenary"
-    echo "Press 5 for Traveler"
-    echo "Press 6 for Merchant"
-    echo "Press 7 for Scholar"
+    echo "Press 4 to battle as the Mercenary class"
+
+    echo "Press 5 to adventure as the Traveler class"
+
+    echo "Press 6 to seek riches as the Merchant class"
+
+    echo "Press 7 to gather knowlage as the Scholar"
     read class
 
     read type
