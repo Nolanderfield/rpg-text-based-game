@@ -41,8 +41,12 @@ while true; do
     echo "For a class description, please"
     echo "enter the class name"
     echo "Press 1 for Noble"
+
     echo "Press 2 for Peasant"
+    echo "Poor, uneducated, and typically a farmer."
+
     echo "Press 3 for Monk"
+
     echo "Press 4 for Mercenary"
     echo "Press 5 for Traveler"
     echo "Press 6 for Merchant"
