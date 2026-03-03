@@ -38,6 +38,8 @@ while true; do
 
     # Choosing a class section
     echo "Please choose a class."
+    echo "For a class description, please"
+    echo "enter the class name"
     echo "Press 1 for Noble"
     echo "Press 2 for Peasant"
     echo "Press 3 for Monk"
@@ -46,6 +48,8 @@ while true; do
     echo "Press 6 for Merchant"
     echo "Press 7 for Scholar"
     read class
+
+    read type
 
     case $class in
         1)
