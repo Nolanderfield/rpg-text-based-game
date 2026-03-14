@@ -39,76 +39,106 @@ while true; do
     # Choosing a class section
     echo "Please choose a class."
 
-    echo "For a class description, please enter"
-    echo "the class name"
-
     echo "Press 1 to choose the Noble class"
+    echo "High charisma, social skills, and a leader."
 
     echo "Press 2 for the challenging Peasant class"
     echo "Poor, uneducated, and typically a farmer."
 
     echo "Press 3 showing discipline as the Monk class"
+    echo "Unarmed combat, agility, and mental discipline."
 
     echo "Press 4 to battle as the Mercenary class"
+    echo "Equipped with a range of weapons and armor."
 
     echo "Press 5 to adventure as the Traveler class"
+    echo "Explore by navigation, piloting, and survival."
 
     echo "Press 6 to seek riches as the Merchant class"
+    echo "Expertise in trade, bartering, and appraising."
 
-    echo "Press 7 to gather knowlage as the Scholar"
+    echo "Press 7 to gather knowledge as the Scholar"
+    echo "Vast knowledge, healing abilities, and lore."
+
     read class
-
-    read type
-
+HP, MP, STR, DEX, CON, INT, WIS, CHA
     case $class in
         1)
             type="Noble"
-            hp=12
-            atk=11
-            mag=10
-            lck=13
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         2)
             type="Peasant"
-            hp=10
-            atk=10
-            mag=10
-            lck=10
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         3)
             type="Monk"
-            hp=10
-            atk=10
-            mag=15
-            lck=10
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         4)
             type="Mercenary"
-            hp=12
-            atk=13
-            mag=10
-            lck=10
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         5)
             type="Traveler"
-            hp=11
-            atk=11
-            mag=10
-            lck=13
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         6)
             type="Merchant"
-            hp=10
-            atk=10
-            mag=10
-            lck=15
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         7)
             type="Scholar"
-            hp=10
-            atk=10
-            mag=15
-            lck=10
+            HP=12
+            MP=11
+            STR=10
+            DEX=13
+	    CON=10
+	    INT=11
+	    WIS=10
+	    CHA=15
             ;;
         *)
             echo "Invalid choice."
@@ -120,10 +150,14 @@ while true; do
     # Display chosen class stats
     echo "You have chosen the $type class."
     echo "Your stats are:"
-    echo "HP: $hp"
-    echo "Attack: $atk"
-    echo "Magic: $mag"
-    echo "Luck: $lck"
+    echo "HP: $HP"
+    echo "Magic: $MP"
+    echo "Strength: $STR"
+    echo "Dexterity: $DEX"
+    echo "Constitution: $CON"
+    echo "Intelligence: $INT"
+    echo "Wisdom: $WIS"
+    echo "Charisma: $CHA"
 
     # Possible scenario section
 done
