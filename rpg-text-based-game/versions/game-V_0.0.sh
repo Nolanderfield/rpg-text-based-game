@@ -61,14 +61,14 @@ while true; do
     echo "Vast knowledge, healing abilities, and lore."
 
     read class
-HP, MP, STR, DEX, CON, INT, WIS, CHA
+
     case $class in
         1)
             type="Noble"
             HP=12
-            MP=11
+            MP=10
             STR=10
-            DEX=13
+            DEX=1
 	    CON=10
 	    INT=11
 	    WIS=10
@@ -76,69 +76,69 @@ HP, MP, STR, DEX, CON, INT, WIS, CHA
             ;;
         2)
             type="Peasant"
-            HP=12
-            MP=11
-            STR=10
-            DEX=13
-	    CON=10
-	    INT=11
+            HP=13
+            MP=10
+            STR=13
+            DEX=10
+	    CON=12
+	    INT=10
 	    WIS=10
-	    CHA=15
+	    CHA=10
             ;;
         3)
             type="Monk"
             HP=12
-            MP=11
+            MP=10
             STR=10
-            DEX=13
+            DEX=15
 	    CON=10
-	    INT=11
+	    INT=10
 	    WIS=10
-	    CHA=15
+	    CHA=10
             ;;
         4)
             type="Mercenary"
-            HP=12
-            MP=11
-            STR=10
-            DEX=13
-	    CON=10
-	    INT=11
+            HP=13
+            MP=10
+            STR=13
+            DEX=10
+	    CON=11
+	    INT=10
 	    WIS=10
-	    CHA=15
+	    CHA=10
             ;;
         5)
             type="Traveler"
-            HP=12
-            MP=11
-            STR=10
-            DEX=13
-	    CON=10
-	    INT=11
+            HP=13
+            MP=10
+            STR=11
+            DEX=11
+	    CON=11
+	    INT=10
 	    WIS=10
-	    CHA=15
+	    CHA=10
             ;;
         6)
             type="Merchant"
-            HP=12
-            MP=11
+            HP=10
+            MP=10
             STR=10
-            DEX=13
+            DEX=10
 	    CON=10
-	    INT=11
-	    WIS=10
-	    CHA=15
+	    INT=13
+	    WIS=12
+	    CHA=12
             ;;
         7)
             type="Scholar"
-            HP=12
-            MP=11
+            HP=10
+            MP=15
             STR=10
-            DEX=13
+            DEX=10
 	    CON=10
-	    INT=11
+	    INT=15
 	    WIS=10
-	    CHA=15
+	    CHA=10
             ;;
         *)
             echo "Invalid choice."
@@ -150,7 +150,7 @@ HP, MP, STR, DEX, CON, INT, WIS, CHA
     # Display chosen class stats
     echo "You have chosen the $type class."
     echo "Your stats are:"
-    echo "HP: $HP"
+    echo "Hit Points: $HP"
     echo "Magic: $MP"
     echo "Strength: $STR"
     echo "Dexterity: $DEX"
