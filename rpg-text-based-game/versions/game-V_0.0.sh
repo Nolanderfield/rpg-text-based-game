@@ -4,68 +4,86 @@
 
 while true; do
     echo "Welcome to Blippy's bash script game."
+    sleep 2
 
     # Class stats description section
-    sleep 2
-    echo "Key Statistics:"
-    sleep 1
-
     # Ask if the player wants to see the stats
     echo "Do you want to read the character stats? (y/n)"
     read see_stats
 
     if [[ $see_stats == "y" ]]; then
 
+    echo "Key Statistics:"
+    sleep 1
     # Display stats descriptions
     echo "Hit Points (HP): Represents a character's"
     echo "health and vitality."
-
+    sleep 3
     echo "Magic Points (MP): Represents a character's"
     echo "ability to cast spells or use magical"
     echo "abilities."
-
+    sleep 4
     echo "Strength (STR): Determines a character's"
     echo "physical power and melee combat effectiveness."
-
+    sleep 3
     echo "Dexterity (DEX): Represents a character's"
     echo "agility, reflexes, and balance."
-
+    sleep 3
     echo "Constitution (CON): Determines a character's"
     echo "health, stamina, and resistance to disease."
-
+    sleep 3
     echo "Intelligence (INT): Represents a character's"
     echo "reasoning, memory, and analytical skills."
-
+    sleep 3
     echo "Wisdom (WIS): Determines a character's"
     echo "intuition, perception, and willpower."
-
+    sleep 3
     echo "Charisma (CHA): Represents a character's"
     echo "force of personality, confidence, & leadership."
     else
     echo "Skipping stats descriptions."
+    sleep 1
     fi
 
     # Choosing a class section
     echo "Please choose a class."
+    sleep 2
+    echo "Press..."
+    sleep 1
+    echo "1 for Noble or 'a' for class description"
+    sleep 2
+    echo "2 for Peasent or 'b' for class description"
+    sleep 1
+    echo "3 for Monk or 'c' for class description"
+    sleep 1
+    echo "4 for Mercenary or 'd' for class description"
+    sleep 1
+    echo "5 for Traveler or 'e' for class description"
+    sleep 1
+    echo "6 for Merchant or 'f' for class description"
+    sleep 1
+    echo "7 for Scholar or 'g' for class description"
+    sleep 1
+    echo "
 
     echo "Press 1 to choose the Noble class"
     echo "High charisma, social skills, and a leader."
-
+    sleep 3
     echo "Press 2 for the challenging Peasant class"
     echo "Poor, uneducated, and typically a farmer."
-
+    sleep 3
     echo "Press 3 showing discipline as the Monk class"
     echo "Unarmed combat, agility, and mental discipline."
-
+    sleep 3
     echo "Press 4 to battle as the Mercenary class"
     echo "Equipped with a range of weapons and armor."
-
+    sleep 3
     echo "Press 5 to adventure as the Traveler class"
     echo "Explore by navigation, piloting, and survival."
-
+    sleep 3
     echo "Press 6 to seek riches as the Merchant class"
     echo "Expertise in trade, bartering, and appraising."
-
+    sleep 3
     echo "Press 7 to gather knowledge as the Scholar"
     echo "Vast knowledge, healing abilities, and lore."
 
