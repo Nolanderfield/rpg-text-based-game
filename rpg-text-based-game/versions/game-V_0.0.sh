@@ -10,6 +10,12 @@ while true; do
     echo "Key Statistics:"
     sleep 1
 
+    # Ask if the player wants to see the stats
+    echo "Do you want to read the character stats? (y/n)"
+    read see_stats
+
+    if [[ $see_stats == "y" ]]; then
+
     # Display stats descriptions
     echo "Hit Points (HP): Represents a character's"
     echo "health and vitality."
@@ -35,6 +41,9 @@ while true; do
 
     echo "Charisma (CHA): Represents a character's"
     echo "force of personality, confidence, & leadership."
+    else
+    echo "Skipping stats descriptions."
+    fi
 
     # Choosing a class section
     echo "Please choose a class."
@@ -188,23 +197,57 @@ encounter() {
 
 # Scenario battle section
 fight() {
-    # Ehp stands for enemy hit points
-    # Eatk stands for enemy attack
-    Ehp=15
-    Eatk=12
+    # Enemy's health
+    enemy_hp=10
+    # Amount the enemy will hit for
+    enemy_damage=3
+    # Player's attack power varies slightly
+    player_damage=$((STR + RANDOM % 3))
 
-    echo "You engage in a battle with the beast!"
-    echo "Your HP: $hp"
-    echo "Beast HP: $Ehp"
+    echo "You engage in battle!"
 
-    while [ $hp -gt 0 ] && [ $Ehp -gt 0 ]; do
-        # Player attacks
-        damage=$(( RANDOM % atk + 1 ))
-        Ehp=$(( Ehp - damage ))
-        echo "You deal $damage damage to the beast."
-        echo "Beast HP: $Ehp"
+    while true; do
+	# Player's turn
+	echo "You attack the enemy for"
+	echo "$player_damage damage!"
+	enemy_hp=$((enemy_hp - player_damage))
+	echo "Enemy HP: $enemy_hp"
 
-        if [ $Ehp -le 0 ]; then
-            echo "You have defeated the beast!"
+        # Check if the enemy is defeated
+        if [ "$enemy_hp" -le 0 ]; then
+            echo "You defeated the enemy!"
             break
         fi
+
+        # Enemy's turn
+        echo "The enemy attacks you for"
+	echo "$enemy_damage damage!"
+        HP=$((HP - enemy_damage))
+        echo "Your HP: $HP"
+
+        # Check if the player is defeated
+        if [ "$HP" -le 0 ]; then
+            echo "You have been defeated."
+            exit
+        fi
+
+        echo "What do you want to do next?"
+        echo "Press 1 to continue fighting"
+        echo "Press 2 to run away"
+        read next_action
+
+        case $next_action in
+            1)
+                continue  # Go to the next iteration of the while loop
+                ;;
+            2)
+                echo "You run away safely."
+                break  # Exit the fight loop
+                ;;
+            *)
+                echo "Invalid choice."
+                ;;
+        esac
+    done
+}
+
