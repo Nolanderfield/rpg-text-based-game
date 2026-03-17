@@ -47,6 +47,37 @@ while true; do
     sleep 1
     fi
 
+#Ability Score	Description		Key Functions
+#Strength	Measures physical	Affects melee
+#		and athletic power	attack rolls,
+#		ability.		damage, and
+#					carrying capacity.
+#
+#Dexterity	Represents agility,	Influences ranged
+#		reflexes, and		attack rolls,
+#		precision.		Armor Class,
+#					and stealth.
+#
+#Constitution	Reflects health and	Governs hit
+#		resilience.		points (HP) and
+#					resistance to
+#					damage.
+#
+#Intelligence	Indicates knowledge	Affects
+#		and reasoning.		spellcasting for
+#					Wizards and
+#					knowledge skills.
+#
+#Wisdom		Represents perception	Influences saving
+#		and insight.		throws and skills
+#					like Medicine.
+#
+#Charisma	Measures confidence	Affects
+#		and social influence	spellcasting for
+#					Bards and social
+#					interactions.
+
+
     # Flavor or backstory to interest class
 #    echo "High charisma, social skills, and a leader."
 #    echo "Poor, uneducated, and typically a farmer."
