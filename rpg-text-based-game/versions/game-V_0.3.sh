@@ -47,49 +47,14 @@ while true; do
     sleep 1
     fi
 
-#    echo "Please choose a class."
-#    sleep 2
-#    echo "Press..."
-#    sleep 1
-#    echo "1 for Noble or 'a' for Noble description"
-#    sleep 2
-#    echo "2 for Peasent or 'b' for Peasent description"
-#    sleep 1
-#    echo "3 for Monk or 'c' for Monk description"
-#    sleep 1
-#    echo "4 for Mercenary or 'd' for Mercenary description"
-#    sleep 1
-#    echo "5 for Traveler or 'e' for Traveler description"
-#    sleep 1
-#    echo "6 for Merchant or 'f' for Merchant description"
-#    sleep 1
-#    echo "7 for Scholar or 'g' for Scholar description"
-#    sleep 1
-
-    # Class description section
-#    echo "The Noble class:"
+    # Flavor or backstory to interest class
 #    echo "High charisma, social skills, and a leader."
-#    sleep 3
-#    echo "The Peasant class:"
 #    echo "Poor, uneducated, and typically a farmer."
-#    sleep 3
-#    echo "The Monk class:"
 #    echo "Unarmed combat, agility, and mental discipline."
-#    sleep 3
-#    echo "The Mercenary class:"
 #    echo "Equipped with a range of weapons and armor."
-#    sleep 3
-#    echo "The Traveler class:"
 #    echo "Explore by navigation, piloting, and survival."
-#    sleep 3
-#    echo "The Merchant class:"
 #    echo "Expertise in trade, bartering, and appraising."
-#    sleep 3
-#    echo "The Scholar class:"
 #    echo "Vast knowledge, healing abilities, and lore."
-#    read class
-#
-#    case $class in
 
     # Choosing a class section
     echo "Please choose a class by entering"
