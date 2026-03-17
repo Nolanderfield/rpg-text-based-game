@@ -47,55 +47,73 @@ while true; do
     sleep 1
     fi
 
-    # Choosing a class section
-    echo "Please choose a class."
-    sleep 2
-    echo "Press..."
-    sleep 1
-    echo "1 for Noble or 'a' for Noble description"
-    sleep 2
-    echo "2 for Peasent or 'b' for Peasent description"
-    sleep 1
-    echo "3 for Monk or 'c' for Monk description"
-    sleep 1
-    echo "4 for Mercenary or 'd' for Mercenary description"
-    sleep 1
-    echo "5 for Traveler or 'e' for Traveler description"
-    sleep 1
-    echo "6 for Merchant or 'f' for Merchant description"
-    sleep 1
-    echo "7 for Scholar or 'g' for Scholar description"
-    sleep 1
+#    echo "Please choose a class."
+#    sleep 2
+#    echo "Press..."
+#    sleep 1
+#    echo "1 for Noble or 'a' for Noble description"
+#    sleep 2
+#    echo "2 for Peasent or 'b' for Peasent description"
+#    sleep 1
+#    echo "3 for Monk or 'c' for Monk description"
+#    sleep 1
+#    echo "4 for Mercenary or 'd' for Mercenary description"
+#    sleep 1
+#    echo "5 for Traveler or 'e' for Traveler description"
+#    sleep 1
+#    echo "6 for Merchant or 'f' for Merchant description"
+#    sleep 1
+#    echo "7 for Scholar or 'g' for Scholar description"
+#    sleep 1
 
     # Class description section
-    echo "The Noble class:"
-    echo "High charisma, social skills, and a leader."
-    sleep 3
-    echo "The Peasant class:"
-    echo "Poor, uneducated, and typically a farmer."
-    sleep 3
-    echo "The Monk class:"
-    echo "Unarmed combat, agility, and mental discipline."
-    sleep 3
-    echo "The Mercenary class:"
-    echo "Equipped with a range of weapons and armor."
-    sleep 3
-    echo "The Traveler class:"
-    echo "Explore by navigation, piloting, and survival."
-    sleep 3
-    echo "The Merchant class:"
-    echo "Expertise in trade, bartering, and appraising."
-    sleep 3
-    echo "The Scholar class:"
-    echo "Vast knowledge, healing abilities, and lore."
+#    echo "The Noble class:"
+#    echo "High charisma, social skills, and a leader."
+#    sleep 3
+#    echo "The Peasant class:"
+#    echo "Poor, uneducated, and typically a farmer."
+#    sleep 3
+#    echo "The Monk class:"
+#    echo "Unarmed combat, agility, and mental discipline."
+#    sleep 3
+#    echo "The Mercenary class:"
+#    echo "Equipped with a range of weapons and armor."
+#    sleep 3
+#    echo "The Traveler class:"
+#    echo "Explore by navigation, piloting, and survival."
+#    sleep 3
+#    echo "The Merchant class:"
+#    echo "Expertise in trade, bartering, and appraising."
+#    sleep 3
+#    echo "The Scholar class:"
+#    echo "Vast knowledge, healing abilities, and lore."
+#    read class
+#
+#    case $class in
 
-    read class
+    # Choosing a class section
+    echo "Please choose a class by entering"
+    echo "a number (1-7) or 'd' for the"
+    echo "corresponding description."
+choose_class() {
+    echo "1) Noble"
+    echo "2) Peasant"
+    echo "3) Monk"
+    echo "4) Mercenary"
+    echo "5) Traveler"
+    echo "6) Merchant"
+    echo "7) Scholar"
+    read class_choice
 
-    case $class in
+    case $class_choice in
         1)
             type="Noble"
             HP=11
             MP=11
+	    # Ability Scores
+	    echo "The Noble class:"
+	    echo "Born of privilege, nobles command"
+	    echo "respect and lead with authority."
             STR=10
             DEX=10
 	    CON=10
@@ -107,6 +125,10 @@ while true; do
             type="Peasant"
             HP=13
             MP=10
+	    # Ability Scores
+	    echo "The Peasant class:"
+	    echo "Despite hardships, peasants endure"
+	    echo "with resilience and resourcefulness."
             STR=13
             DEX=10
 	    CON=12
@@ -118,6 +140,7 @@ while true; do
             type="Monk"
             HP=12
             MP=10
+	    # Ability Scores
             STR=10
             DEX=15
 	    CON=10
@@ -129,6 +152,7 @@ while true; do
             type="Mercenary"
             HP=14
             MP=10
+	    # Ability Scores
             STR=13
             DEX=10
 	    CON=11
@@ -140,6 +164,7 @@ while true; do
             type="Traveler"
             HP=13
             MP=11
+	    # Ability Scores
             STR=11
             DEX=11
 	    CON=11
@@ -151,6 +176,7 @@ while true; do
             type="Merchant"
             HP=10
             MP=11
+	    # Ability Scores
             STR=10
             DEX=10
 	    CON=10
@@ -162,6 +188,7 @@ while true; do
             type="Scholar"
             HP=10
             MP=13
+	    # Ability Scores
             STR=10
             DEX=10
 	    CON=10
@@ -170,12 +197,27 @@ while true; do
 	    CHA=10
             ;;
         *)
-            echo "Invalid choice."
-	    sleep 1
-	    echo "Please choose a valid class."
-            continue
+            echo "Invalid choice. Please try again."
+	    # Re-prompt
+            choose_class
+            return
             ;;
     esac
+    # Display chosen class details...
+}
+
+while true; do
+    # Invoke function to choose class
+    choose_class
+done
+
+#        *)
+#            echo "Invalid choice."
+#	    sleep 1
+#	    echo "Please choose a valid class."
+#            continue
+#            ;;
+#    esac
 
     echo "You have chosen the $type class."
     sleep 1
