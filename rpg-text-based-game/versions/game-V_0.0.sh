@@ -5,6 +5,13 @@
 while true; do
     echo "Welcome to Blippy's bash script game."
     sleep 2
+    echo "Hit Points (HP): Represents a character's"
+    echo "health and vitality."
+    sleep 3
+    echo "Magic Points (MP): Represents a character's"
+    echo "ability to cast spells or use magical"
+    echo "abilities."
+    sleep 4
 
     # Class Ability Score description section
     # Ask if the player wants to see the Ability Scores.
@@ -14,13 +21,6 @@ while true; do
     if [[ $see_abilities == "y" ]]; then
 
     # Display Ability Score descriptions
-#    echo "Hit Points (HP): Represents a character's"
-#    echo "health and vitality."
-#    sleep 3
-#    echo "Magic Points (MP): Represents a character's"
-#    echo "ability to cast spells or use magical"
-#    echo "abilities."
-#    sleep 4
     echo "Physical Ability Scores"
     sleep 1
     echo "Strength (STR): Determines a character's"
@@ -52,52 +52,52 @@ while true; do
     sleep 2
     echo "Press..."
     sleep 1
-    echo "1 for Noble or 'a' for class description"
+    echo "1 for Noble or 'a' for Noble description"
     sleep 2
-    echo "2 for Peasent or 'b' for class description"
+    echo "2 for Peasent or 'b' for Peasent description"
     sleep 1
-    echo "3 for Monk or 'c' for class description"
+    echo "3 for Monk or 'c' for Monk description"
     sleep 1
-    echo "4 for Mercenary or 'd' for class description"
+    echo "4 for Mercenary or 'd' for Mercenary description"
     sleep 1
-    echo "5 for Traveler or 'e' for class description"
+    echo "5 for Traveler or 'e' for Traveler description"
     sleep 1
-    echo "6 for Merchant or 'f' for class description"
+    echo "6 for Merchant or 'f' for Merchant description"
     sleep 1
-    echo "7 for Scholar or 'g' for class description"
+    echo "7 for Scholar or 'g' for Scholar description"
     sleep 1
-    echo "
 
-#    echo "Press 1 to choose the Noble class"
-#    echo "High charisma, social skills, and a leader."
-#    sleep 3
-#    echo "Press 2 for the challenging Peasant class"
-#    echo "Poor, uneducated, and typically a farmer."
-#    sleep 3
-#    echo "Press 3 showing discipline as the Monk class"
-#    echo "Unarmed combat, agility, and mental discipline."
-#    sleep 3
-#    echo "Press 4 to battle as the Mercenary class"
-#    echo "Equipped with a range of weapons and armor."
-#    sleep 3
-#    echo "Press 5 to adventure as the Traveler class"
-#    echo "Explore by navigation, piloting, and survival."
-#    sleep 3
-#    echo "Press 6 to seek riches as the Merchant class"
-#    echo "Expertise in trade, bartering, and appraising."
-#    sleep 3
-#    echo "Press 7 to gather knowledge as the Scholar"
-#    echo "Vast knowledge, healing abilities, and lore."
+    # Class description section
+    echo "The Noble class:"
+    echo "High charisma, social skills, and a leader."
+    sleep 3
+    echo "The Peasant class:"
+    echo "Poor, uneducated, and typically a farmer."
+    sleep 3
+    echo "The Monk class:"
+    echo "Unarmed combat, agility, and mental discipline."
+    sleep 3
+    echo "The Mercenary class:"
+    echo "Equipped with a range of weapons and armor."
+    sleep 3
+    echo "The Traveler class:"
+    echo "Explore by navigation, piloting, and survival."
+    sleep 3
+    echo "The Merchant class:"
+    echo "Expertise in trade, bartering, and appraising."
+    sleep 3
+    echo "The Scholar class:"
+    echo "Vast knowledge, healing abilities, and lore."
 
     read class
 
     case $class in
         1)
             type="Noble"
-            HP=12
-            MP=10
+            HP=11
+            MP=11
             STR=10
-            DEX=1
+            DEX=10
 	    CON=10
 	    INT=11
 	    WIS=10
@@ -122,12 +122,12 @@ while true; do
             DEX=15
 	    CON=10
 	    INT=10
-	    WIS=10
+	    WIS=11
 	    CHA=10
             ;;
         4)
             type="Mercenary"
-            HP=13
+            HP=14
             MP=10
             STR=13
             DEX=10
@@ -139,18 +139,18 @@ while true; do
         5)
             type="Traveler"
             HP=13
-            MP=10
+            MP=11
             STR=11
             DEX=11
 	    CON=11
 	    INT=10
-	    WIS=10
+	    WIS=11
 	    CHA=10
             ;;
         6)
             type="Merchant"
             HP=10
-            MP=10
+            MP=11
             STR=10
             DEX=10
 	    CON=10
@@ -161,7 +161,7 @@ while true; do
         7)
             type="Scholar"
             HP=10
-            MP=15
+            MP=13
             STR=10
             DEX=10
 	    CON=10
@@ -171,31 +171,39 @@ while true; do
             ;;
         *)
             echo "Invalid choice."
+	    sleep 1
 	    echo "Please choose a valid class."
             continue
             ;;
     esac
 
-    # Display chosen class Ability Scores
     echo "You have chosen the $type class."
+    sleep 1
+    # Display chosen class starting HP and MP
+    echo "Your starting Hit Points: $HP"
+    sleep 1
+    echo "And Magic Points: $MP"
+    sleep 1
+    # Display chosen class Ability Scores
     echo "Your Ability Scores are:"
-    echo "Hit Points: $HP"
-    echo "Magic: $MP"
+    sleep 1
     echo "Strength: $STR"
     echo "Dexterity: $DEX"
     echo "Constitution: $CON"
     echo "Intelligence: $INT"
     echo "Wisdom: $WIS"
     echo "Charisma: $CHA"
+    sleep 5
 done
 
 # Scenario encounter section
 encounter() {
     echo "You encounter a wild beast!"
+    sleep 1
     echo "What do you want to do?"
+    sleep 1
     echo "Press 1 to fight"
     echo "Press 2 to run"
-
     read action
 
     case $action in
@@ -207,6 +215,7 @@ encounter() {
             ;;
         *)
             echo "Invalid choice."
+	    sleep 1
             echo "You hesitate and the beast attacks!"
             fight
             ;;
@@ -223,14 +232,15 @@ fight() {
     player_damage=$((STR + RANDOM % 3))
 
     echo "You engage in battle!"
-
+    sleep 2
     while true; do
 	# Player's turn
 	echo "You attack the enemy for"
 	echo "$player_damage damage!"
 	enemy_hp=$((enemy_hp - player_damage))
+	sleep 2
 	echo "Enemy HP: $enemy_hp"
-
+	sleep 2
         # Check if the enemy is defeated
         if [ "$enemy_hp" -le 0 ]; then
             echo "You defeated the enemy!"
@@ -241,8 +251,9 @@ fight() {
         echo "The enemy attacks you for"
 	echo "$enemy_damage damage!"
         HP=$((HP - enemy_damage))
+	sleep 1
         echo "Your HP: $HP"
-
+   	sleep 2
         # Check if the player is defeated
         if [ "$HP" -le 0 ]; then
             echo "You have been defeated."
@@ -250,6 +261,7 @@ fight() {
         fi
 
         echo "What do you want to do next?"
+	sleep 1
         echo "Press 1 to continue fighting"
         echo "Press 2 to run away"
         read next_action
