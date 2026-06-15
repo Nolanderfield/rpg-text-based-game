@@ -423,7 +423,7 @@ while true; do
     echo "Lvl:$PLAYER_LEVEL XP:$PLAYER_XP/$(XP_TO_LEVEL $PLAYER_LEVEL) HP:$PLAYER_HP/$PLAYER_MAX_HP MP:$PLAYER_MP STR:$PLAYER_STR DEX:$PLAYER_DEX CON:$PLAYER_CON INT:$PLAYER_INT WIS:$PLAYER_WIS CHA:$PLAYER_CHA Gold:$PLAYER_GOLD"
     echo "Actions: 1) Explore 2) Inventory 3) Shop 4) Save 5) Load 6) Quit to menu"
     act=$(prompt_number "Choose (1-6): " 1 6)
-    case "$act" in
+  case "$act" in
       1)
         event=$((RANDOM%6))
         case $event in
@@ -431,10 +431,11 @@ while true; do
           1) encounter;;
           2) echo "You meet a traveling merchant."; open_shop;;
           3) echo "You wander and find nothing.";;
-          4) echo "You find a coin purse."; local g=$((RANDOM%10+5)); PLAYER_GOLD=$((PLAYER_GOLD+g)); echo "Found $g gold. (Gold: $PLAYER_GOLD)";;
-          5) echo "You discover an old chest."; if (( RANDOM % 100 < 40 )); then add_to_inventory "Minor Health Potion"; else echo "It's empty."; fi;;
+          4) echo "You find a coin purse." g=$((RANDOM % 10 + 5)) PLAYER_GOLD=$((PLAYER_GOLD + g)) echo "Found $g gold. (Gold: $PLAYER_GOLD)";;
+          5) echo "You discover an old chest." if (( RANDOM % 100 < 40 )); then add_to_inventory "Minor Health Potion"; else echo "It's empty."; fi;;
         esac
-        ;;
+      ;;
+  esac
       2)
         show_inventory
         echo "1) Use item 2) Drop item 3) Back"
@@ -478,4 +479,3 @@ while true; do
     fi
   done
 done
-
