@@ -431,9 +431,7 @@ while true; do
             echo "You find a Herb."
             add_to_inventory "Herb"
             ;;
-          1)
-            encounter
-            ;;
+          1) encounter ;;
           2)
             echo "You meet a traveling merchant."
             open_shop
@@ -457,12 +455,6 @@ while true; do
             ;;
         esac
         ;;
-      *)
-        # other actions...
-        ;;
-    esac
-  done
-
       2)
         show_inventory
         echo "1) Use item 2) Drop item 3) Back"
@@ -489,15 +481,28 @@ while true; do
             fi
             ;;
           2)
-            if [ "${#INVENTORY[@]}" -eq 0 ]; then echo "No items to drop."; else show_inventory; idx=$(prompt_number "Drop which item number (0 cancel): " 0 "${#INVENTORY[@]}"); if [ "$idx" -eq 0 ]; then echo "Canceled."; else idx=$((idx-1)); echo "Dropped ${INVENTORY[idx]}"; remove_from_inventory_by_index "$idx"; fi; fi
+            if [ "${#INVENTORY[@]}" -eq 0 ]; then
+              echo "No items to drop."
+            else
+              show_inventory
+              idx=$(prompt_number "Drop which item number (0 cancel): " 0 "${#INVENTORY[@]}")
+              if [ "$idx" -ne 0 ]; then
+                idx=$((idx-1))
+                echo "Dropped ${INVENTORY[idx]}"
+                remove_from_inventory_by_index "$idx"
+              else
+                echo "Canceled."
+              fi
+            fi
             ;;
           3) ;;
         esac
         ;;
-      3) open_shop;;
-      4) save_game;;
-      5) load_game;;
-      6) break;;
+      3) open_shop ;;
+      4) save_game ;;
+      5) load_game ;;
+      6) break ;;
+      *) echo "Invalid choice." ;;
     esac
 
     if (( PLAYER_HP <= 0 )); then
